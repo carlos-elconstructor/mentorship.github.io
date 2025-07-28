@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despertar Interior - Transforma Tu Vida En 30 Días</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+        
+        .nav-btn {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="400" cy="700" r="120" fill="url(%23a)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero h2 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .credibility {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            opacity: 0.8;
+            font-style: italic;
+        }
+        
+        .cta-primary {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(238, 90, 36, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(238, 90, 36, 0.6);
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .stat-label {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        /* Problem Section */
+        .problem {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .problem-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .problem h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .problem p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .problem .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 40px 0;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        /* Method Section */
+        .method {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .method h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #333;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .step {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .step:hover {
+            transform: translateY(-10px);
+        }
+        
+        .step-number {
+            background: rgba(255,255,255,0.2);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        .benefits {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 20px;
+        }
+        
+        .benefits h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            color: #333;
+        }
+        
+        .benefits ul {
+            list-style: none;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .benefits li {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .benefits li i {
+            color: #28a745;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .products h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: white;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-card.featured {
+            border: 3px solid #ff6b6b;
+            transform: scale(1.05);
+        }
+        
+        .product-card.featured::before {
+            content: 'MÁS POPULAR';
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: #ff6b6b;
+            color: white;
+            padding: 8px 40px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .product-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .product-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+        
+        .product-price .old-price {
+            font-size: 1.2rem;
+            text-decoration: line-through;
+            color: #999;
+            margin-left: 10px;
+        }
+        
+        .product-description {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .product-includes {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+        
+        .product-includes h4 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .product-includes ul {
+            list-style: none;
+        }
+        
+        .product-includes li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+            color: #666;
+        }
+        
+        .product-includes li i {
+            color: #28a745;
+            margin-right: 10px;
+        }
+        
+        .product-benefits {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .product-benefits h4 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .product-cta {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        .product-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(40, 167, 69, 0.4);
+        }
+        
+        .testimonial-mini {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+            border-left: 3px solid #ff6b6b;
+            padding-left: 15px;
+            text-align: left;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #333;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .testimonial {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 20px;
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            font-size: 4rem;
+            color: #667eea;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            margin-top: 30px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .faq h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #333;
+        }
+        
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            background: #667eea;
+            color: white;
+            padding: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question:hover {
+            background: #5a67d8;
+        }
+        
+        .faq-answer {
+            padding: 25px;
+            color: #666;
+            line-height: 1.7;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        /* Guarantee Section */
+        .guarantee {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .guarantee-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .guarantee h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .guarantee-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .guarantee-feature {
+            text-align: center;
+        }
+        
+        .guarantee-feature i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .guarantee-feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .contact p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+        
+        .contact-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px;
+            border-radius: 20px;
+            color: white;
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+        }
+        
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .contact-email {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .contact-email a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-email a:hover {
+            border-bottom-color: white;
+        }
+        
+        .contact-note {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        /* Final CTA Section */
+        .final-cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .final-cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .final-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            font-weight: 900;
+        }
+        
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+        
+        .urgency {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .final-cta-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 25px 50px;
+            border: none;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 35px rgba(238, 90, 36, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+        
+        .final-cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 45px rgba(238, 90, 36, 0.6);
+        }
+        
+        .bonus-offer {
+            font-size: 1rem;
+            opacity: 0.8;
+            font-style: italic;
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section ul li a:hover {
+            color: #667eea;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #555;
+            padding-top: 30px;
+            text-align: center;
+            color: #ccc;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+            
+            .stats {
+                gap: 20px;
+            }
+            
+            .stats .stat {
+                flex: 1;
+                min-width: 120px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-card.featured {
+                transform: none;
+            }
+            
+            .final-cta h2 {
+                font-size: 2.2rem;
+            }
+            
+            .final-cta p {
+                font-size: 1.1rem;
+            }
+            
+            .contact h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        /* Popup Styles */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+        
+        .popup {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+        }
+        
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+        }
+        
+        .popup h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .popup p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .popup-cta {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .paypal-btn {
+            background: linear-gradient(135deg, #0070ba, #003087);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 112, 186, 0.3);
+            min-width: 250px;
+        }
+        
+        .paypal-btn:hover {
+            background: linear-gradient(135deg, #005ea6, #002973);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 112, 186, 0.4);
+        }
+        
+        .paypal-btn i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .payment-popup {
+            max-width: 450px;
+            width: 90%;
+        }
+        
+        .payment-popup h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .payment-popup h4 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-sun"></i>
+                    Despertar Interior
+                </div>
+                <a href="#productos" class="nav-btn">Ver Cursos</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transforma Tu Vida En Los Próximos 30 Días</h1>
+                <h2>El método probado que rompe tus barreras mentales y desbloquea tu verdadero potencial</h2>
+                <p class="credibility">Creado por el mentor que ha guiado a miles de personas desde el estancamiento hasta el éxito</p>
+                <a href="#productos" class="cta-primary">COMENZAR MI TRANSFORMACIÓN AHORA</a>
+                
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-number">2,847</span>
+                        <span class="stat-label">Vidas Transformadas</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">30</span>
+                        <span class="stat-label">Días Para Cambiar</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Tasa de Éxito</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <div class="problem-content">
+                <h2>¿Te Sientes Atrapado En Una Vida Que No Es Tuya?</h2>
+                <p>Si cada mañana te levantas sintiendo que estás viviendo en piloto automático... Si tienes sueños y metas que parecen inalcanzables... Si sientes que tu potencial está enterrado bajo capas de dudas, miedos y excusas...</p>
+                
+                <div class="highlight">
+                    <strong>No estás solo.</strong>
+                </div>
+                
+                <p>Miles de personas viven prisioneras de sus propias limitaciones mentales, repitiendo los mismos patrones día tras día, sintiéndose frustradas porque saben que merecen más, pero no saben cómo conseguirlo.</p>
+                
+                <div class="highlight">
+                    <strong>Pero hay una salida.</strong><br>
+                    Y está más cerca de lo que imaginas.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Method Section -->
+    <section class="method">
+        <div class="container">
+            <h2>El Método de Transformación en 4 Pasos</h2>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>DESPERTAR</h3>
+                    <p>Identificas y desarraícas las creencias limitantes que te mantienen estancado</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>CLARIFICAR</h3>
+                    <p>Defines tu visión clara y creas un plan de acción específico y realista</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>ACTIVAR</h3>
+                    <p>Implementas técnicas probadas que generan cambios inmediatos en tu mentalidad</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>ACELERAR</h3>
+                    <p>Desarrollas hábitos de éxito que hacen que tu transformación sea permanente</p>
+                </div>
+            </div>
+            
+            <div class="benefits">
+                <h3>Beneficios Comprobados:</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Claridad mental absoluta sobre tus objetivos de vida</li>
+                    <li><i class="fas fa-check"></i> Confianza inquebrantable para tomar decisiones importantes</li>
+                    <li><i class="fas fa-check"></i> Energía y motivación constante para actuar</li>
+                    <li><i class="fas fa-check"></i> Herramientas prácticas que funcionan en situaciones reales</li>
+                    <li><i class="fas fa-check"></i> Resultados visibles en las primeras 72 horas</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="productos">
+        <div class="container">
+            <h2>Elige Tu Camino de Transformación</h2>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <h3 class="product-title">RETO 30 DÍAS<br>DESBLOQUEO MENTAL</h3>
+                    <div class="product-price">$197</div>
+                    <p class="product-description">El programa intensivo que rompe las barreras mentales que te limitan y activa tu potencial dormido en solo 30 días.</p>
+                    
+                    <div class="product-includes">
+                        <h4>Lo que incluye:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> 30 entrenamientos mentales diarios (video + audio)</li>
+                            <li><i class="fas fa-check"></i> Workbook de ejercicios prácticos</li>
+                            <li><i class="fas fa-check"></i> Meditaciones guiadas de reprogramación</li>
+                            <li><i class="fas fa-check"></i> Acceso a grupo privado de apoyo</li>
+                            <li><i class="fas fa-check"></i> Certificado de completación</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="product-benefits">
+                        <h4>Beneficios principales:</h4>
+                        <ul>
+                            <li><i class="fas fa-star"></i> Eliminas pensamientos autosaboteadores</li>
+                            <li><i class="fas fa-star"></i> Desarrollas mentalidad de abundancia</li>
+                            <li><i class="fas fa-star"></i> Aumentas tu autoestima y confianza</li>
+                            <li><i class="fas fa-star"></i> Creas disciplina y constancia</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#comprar-reto" class="product-cta">EMPEZAR MI RETO AHORA</a>
+                    
+                    <div class="testimonial-mini">
+                        "En 30 días pasé de sentirme perdida a tener total claridad sobre mi futuro. Este reto cambió mi vida para siempre." - María C., Empresaria
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card featured">
+                    <h3 class="product-title">MENTORÍA INTENSIVA<br>PERSONALIZADA</h3>
+                    <div class="product-price">$997</div>
+                    <p class="product-description">Mentoría 1 a 1 durante 60 días donde trabajamos directamente en tu transformación personal con estrategias adaptadas a tu situación específica.</p>
+                    
+                    <div class="product-includes">
+                        <h4>Lo que incluye:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> 8 sesiones privadas de 60 minutos</li>
+                            <li><i class="fas fa-check"></i> Plan personalizado de transformación</li>
+                            <li><i class="fas fa-check"></i> Acceso directo vía WhatsApp para consultas</li>
+                            <li><i class="fas fa-check"></i> Revisión semanal de progreso</li>
+                            <li><i class="fas fa-check"></i> Herramientas exclusivas de coaching</li>
+                            <li><i class="fas fa-check"></i> Garantía de resultados o devolución</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="product-benefits">
+                        <h4>Beneficios principales:</h4>
+                        <ul>
+                            <li><i class="fas fa-star"></i> Atención 100% personalizada</li>
+                            <li><i class="fas fa-star"></i> Resultados acelerados y medibles</li>
+                            <li><i class="fas fa-star"></i> Superas obstáculos específicos</li>
+                            <li><i class="fas fa-star"></i> Accountability directo conmigo</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#comprar-mentoria" class="product-cta">SOLICITAR MI MENTORÍA</a>
+                    
+                    <div class="testimonial-mini">
+                        "Logré en 2 meses lo que no había conseguido en años. La inversión se pagó sola con los resultados." - Carlos R., Directivo
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <h3 class="product-title">PACK COMPLETO<br>TRANSFORMACIÓN TOTAL</h3>
+                    <div class="product-price">$497 <span class="old-price">$794</span></div>
+                    <p class="product-description">La solución completa que combina el Reto 30 Días + cursos premium + bonus exclusivos para una transformación integral y permanente.</p>
+                    
+                    <div class="product-includes">
+                        <h4>Lo que incluye:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Reto 30 Días Desbloqueo Mental (valor $197)</li>
+                            <li><i class="fas fa-check"></i> Curso "Mentalidad Millonaria" (valor $297)</li>
+                            <li><i class="fas fa-check"></i> Masterclass "Relaciones Extraordinarias" (valor $197)</li>
+                            <li><i class="fas fa-check"></i> Audiolibro "Los 7 Pilares del Éxito" (valor $97)</li>
+                            <li><i class="fas fa-check"></i> Sesión grupal mensual en vivo (valor $147)</li>
+                            <li><i class="fas fa-check"></i> Acceso de por vida a todo el contenido</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="product-benefits">
+                        <h4>Beneficios principales:</h4>
+                        <ul>
+                            <li><i class="fas fa-star"></i> Transformación completa en todas las áreas</li>
+                            <li><i class="fas fa-star"></i> Ahorras $297 comparado con compra individual</li>
+                            <li><i class="fas fa-star"></i> Acceso de por vida</li>
+                            <li><i class="fas fa-star"></i> Actualizaciones gratuitas incluidas</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#comprar-pack" class="product-cta">OBTENER PACK COMPLETO</a>
+                    
+                    <div class="testimonial-mini">
+                        "Este pack es lo más valioso en lo que he invertido. No solo cambié yo, cambió toda mi familia." - Ana L., Psicóloga
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Lo Que Dicen Nuestros Estudiantes</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <h4>De la depresión al éxito empresarial</h4>
+                    <div class="testimonial-content">
+                        Hace un año estaba en el punto más bajo de mi vida. Sin trabajo, sin pareja, sin esperanza. Hoy tengo mi propio negocio online que genera $8,000 mensuales y una relación extraordinaria. Estas enseñanzas literalmente me salvaron la vida.
+                    </div>
+                    <div class="testimonial-author">- Roberto M., Emprendedor Digital</div>
+                </div>
+                
+                <div class="testimonial">
+                    <h4>Recuperé mi confianza después de los 40</h4>
+                    <div class="testimonial-content">
+                        Pensé que era muy tarde para cambiar. A los 43 años me sentía invisible e irrelevante. En 3 meses recuperé mi autoestima, conseguí el trabajo de mis sueños y me siento más segura que nunca. Ahora sé que la edad es solo un número.
+                    </div>
+                    <div class="testimonial-author">- Patricia G., Gerente de Recursos Humanos</div>
+                </div>
+                
+                <div class="testimonial">
+                    <h4>De empleado frustrado a líder inspirador</h4>
+                    <div class="testimonial-content">
+                        Llevaba 15 años odiando mi trabajo pero sin valor para cambiar. Aplicando este método no solo cambié de carrera, sino que ahora lidero un equipo de 20 personas y gano el triple. La transformación fue tan natural que parecía magia.
+                    </div>
+                    <div class="testimonial-author">- Andrés P., Director Comercial</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2>Preguntas Frecuentes</h2>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        ¿Funciona realmente en 30 días?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Sí, el 87% de nuestros estudiantes reportan cambios significativos en los primeros 7 días. Los 30 días son para consolidar la transformación y hacerla permanente. No es magia, es ciencia aplicada con método.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        ¿Qué pasa si no tengo tiempo?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        El programa está diseñado para personas ocupadas. Solo necesitas 20-30 minutos diarios. Los ejercicios se pueden hacer mientras viajas, durante el almuerzo o antes de dormir.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        ¿Y si no funciona para mí?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Tienes 60 días de garantía incondicional. Si sigues el programa y no ves resultados, te devolvemos el 100% de tu dinero. Sin preguntas.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        ¿Necesito experiencia previa en desarrollo personal?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Para nada. El método está diseñado para principiantes. Comenzamos desde cero y te llevamos paso a paso hacia la transformación.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        ¿El contenido se actualiza?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Sí, constantemente añadimos nuevo contenido basado en los últimos descubrimientos en neurociencia y psicología positiva. Todas las actualizaciones son gratuitas.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        ¿Hay soporte si tengo dudas?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Totalmente. Tienes acceso a nuestro grupo privado donde respondo personalmente las preguntas. Además, cada producto incluye soporte por email.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee">
+        <div class="container">
+            <div class="guarantee-content">
+                <h2>Tu Satisfacción Está 100% Garantizada</h2>
+                <p>Estamos tan seguros de que obtendrás resultados extraordinarios, que te ofrecemos nuestra garantía incondicional de 60 días.</p>
+                
+                <div class="guarantee-features">
+                    <div class="guarantee-feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Garantía Incondicional de 60 Días</h3>
+                        <p>Si por cualquier razón no estás completamente satisfecho con tu transformación, te devolvemos todo tu dinero.</p>
+                    </div>
+                    
+                    <div class="guarantee-feature">
+                        <i class="fas fa-lock"></i>
+                        <h3>Pago Seguro y Protegido</h3>
+                        <p>Utilizamos encriptación SSL de nivel bancario. Tu información está completamente protegida.</p>
+                    </div>
+                    
+                    <div class="guarantee-feature">
+                        <i class="fas fa-headset"></i>
+                        <h3>Soporte Personalizado</h3>
+                        <p>Nuestro equipo está disponible para resolver cualquier duda. Respuesta garantizada en menos de 24 horas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="contact-content">
+                <h2>¿Tienes Alguna Pregunta?</h2>
+                <p>Estoy aquí para ayudarte en tu camino de transformación. No dudes en contactarme directamente para cualquier consulta o duda que tengas.</p>
+                
+                <div class="contact-box">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-email">
+                        <a href="mailto:growthycircle@gmail.com">growthycircle@gmail.com</a>
+                    </div>
+                    <div class="contact-note">
+                        Respondo personalmente en menos de 24 horas
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2>No Dejes Que Otro Año Pase Sin Los Cambios Que Mereces</h2>
+                
+                <p>Miles de personas han tomado la decisión más importante de sus vidas y han transformado por completo su realidad.</p>
+                
+                <p>Algunos lo hicieron hace un año y hoy viven la vida de sus sueños.</p>
+                <p>Otros lo hicieron hace un mes y ya ven resultados extraordinarios.</p>
+                <p><strong>Tú puedes ser el próximo.</strong></p>
+                
+                <div class="urgency">
+                    <p>La única diferencia entre las personas que logran sus sueños y las que se quedan deseando, es que las primeras DECIDEN ACTUAR.</p>
+                    <p><strong>Tu momento es AHORA.</strong></p>
+                    <p>La versión mejorada de ti mismo te está esperando al otro lado de esta decisión.</p>
+                </div>
+                
+                <a href="#productos" class="final-cta-btn">TRANSFORMAR MI VIDA AHORA</a>
+                
+                <p class="bonus-offer">Oferta especial: Los primeros 100 compradores reciben una sesión de coaching grupal gratuita conmigo (valor $197)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Despertar Interior</h3>
+                    <p>Transformando vidas desde 2020. Más de 2,847 personas han encontrado su verdadero potencial con nuestros métodos probados.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Productos</h3>
+                    <ul>
+                        <li><a href="#comprar-reto">Reto 30 Días</a></li>
+                        <li><a href="#comprar-mentoria">Mentoría Intensiva</a></li>
+                        <li><a href="#comprar-pack">Pack Completo</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><a href="mailto:growthycircle@gmail.com"><i class="fas fa-envelope"></i> growthycircle@gmail.com</a></li>
+                        <li><a href="#contacto">Enviar consulta</a></li>
+                        <li><a href="#faq">Preguntas frecuentes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Despertar Interior. Todos los derechos reservados. | <a href="#privacidad">Política de Privacidad</a> | <a href="#terminos">Términos y Condiciones</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Exit Intent Popup -->
+    <div class="popup-overlay" id="exitPopup">
+        <div class="popup">
+            <button class="popup-close" onclick="closePopup()">&times;</button>
+            <h3>¡ESPERA - Antes de irte!</h3>
+            <p>Descarga GRATIS la "Guía de 7 Días para Romper Patrones Limitantes"</p>
+            <ul style="text-align: left; margin: 20px 0;">
+                <li>7 ejercicios mentales poderosos</li>
+                <li>Audio de meditación guiada</li>
+                <li>Checklist de autoevaluación</li>
+            </ul>
+            <a href="#descarga-gratis" class="popup-cta">DESCARGAR GRATIS AHORA</a>
+        </div>
+    </div>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Exit Intent Popup
+        let popupShown = false;
+        
+        document.addEventListener('mouseleave', function(e) {
+            if (e.clientY <= 0 && !popupShown) {
+                document.getElementById('exitPopup').style.display = 'flex';
+                popupShown = true;
+            }
+        });
+
+        function closePopup() {
+            document.getElementById('exitPopup').style.display = 'none';
+        }
+
+        // Close popup when clicking overlay
+        document.getElementById('exitPopup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.step, .product-card, .testimonial, .faq-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Product purchase handlers with PayPal integration
+        document.querySelectorAll('[href^="#comprar"]').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const product = this.getAttribute('href').replace('#comprar-', '');
+                
+                // Define PayPal links and prices for each product
+                const paypalLinks = {
+                    'reto': 'https://paypal.me/CarlosBaena633/197',
+                    'mentoria': 'https://paypal.me/CarlosBaena633/997', 
+                    'pack': 'https://paypal.me/CarlosBaena633/497'
+                };
+                
+                const productNames = {
+                    'reto': 'Reto 30 Días - Desbloqueo Mental',
+                    'mentoria': 'Mentoría Intensiva Personalizada',
+                    'pack': 'Pack Completo Transformación Total'
+                };
+                
+                // Show payment modal
+                showPaymentModal(product, paypalLinks[product], productNames[product]);
+            });
+        });
+
+        // Payment Modal Functions
+        function showPaymentModal(productKey, paypalUrl, productName) {
+            const prices = {
+                'reto': '$197',
+                'mentoria': '$997',
+                'pack': '$497'
+            };
+            
+            const modal = document.createElement('div');
+            modal.className = 'popup-overlay';
+            modal.style.display = 'flex';
+            
+            modal.innerHTML = `
+                <div class="popup payment-popup">
+                    <button class="popup-close" onclick="this.parentElement.parentElement.remove()">&times;</button>
+                    <div style="text-align: center;">
+                        <i class="fas fa-credit-card" style="font-size: 3rem; color: #667eea; margin-bottom: 20px;"></i>
+                        <h3>Completar Compra</h3>
+                        <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                            <h4 style="color: #333; margin-bottom: 10px;">${productName}</h4>
+                            <div style="font-size: 2rem; color: #ff6b6b; font-weight: bold;">${prices[productKey]}</div>
+                        </div>
+                        <p style="color: #666; margin-bottom: 25px;">Serás redirigido a PayPal para completar tu pago de forma segura</p>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <a href="${paypalUrl}" target="_blank" class="paypal-btn">
+                                <i class="fab fa-paypal"></i>
+                                Pagar con PayPal o Tarjeta
+                            </a>
+                        </div>
+                        
+                        <div style="font-size: 0.9rem; color: #999; line-height: 1.5;">
+                            <i class="fas fa-shield-alt"></i> Pago 100% seguro<br>
+                            <i class="fas fa-lock"></i> Datos protegidos con SSL<br>
+                            <i class="fas fa-undo"></i> Garantía de 60 días
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Close on overlay click
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
+        }
+
+        // Lead magnet handler
+        document.querySelectorAll('[href="#descarga-gratis"]').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Here you would collect email and send the lead magnet
+                const email = prompt('Ingresa tu email para recibir la guía gratuita:');
+                if (email && email.includes('@')) {
+                    alert('¡Perfecto! Revisa tu email en los próximos minutos.');
+                    closePopup();
+                    
+                    // Here you would send the email to your email marketing service
+                    // Example: submitToEmailService(email, 'lead-magnet');
+                }
+            });
+        });
+
+        // Stats counter animation
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString();
+            }, 20);
+        }
+
+        // Animate stats when they come into view
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        const target = parseInt(stat.textContent.replace(/[^\d]/g, ''));
+                        animateCounter(stat, target);
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const statsSection = document.querySelector('.stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+    </script>
+</body>
+</html>
